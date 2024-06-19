@@ -1,0 +1,15 @@
+/* Define the fade-out animation */
+@keyframes fadeOutAnimation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Apply the animation to the element */
+.fade-out {
+    animation: fadeOutAnimation 0.5s ease forwards; /* Animation duration and timing */
+    opacity: 1; /* Ensure the element starts at full opacity */
+}
