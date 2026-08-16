@@ -33,15 +33,18 @@ function buildStories({ noun, adjective, person, verb, place }) {
         storySpan.textContent = buildStories(words)[0];
     });
 
-    shuffleButton.addEventListener('click', function() {
-        if (!words) {
-            alert('Please fill in the form first.');
-            return;
-        }
+    // The shuffle button only exists on the Mad Libs page, so skip it elsewhere
+    if (shuffleButton) {
+        shuffleButton.addEventListener('click', function() {
+            if (!words) {
+                alert('Please fill in the form first.');
+                return;
+            }
 
-        const stories = buildStories(words);
+            const stories = buildStories(words);
 
-        const randomIndex = Math.floor(Math.random() * stories.length);
-        storySpan.textContent = stories[randomIndex];
-    });
+            const randomIndex = Math.floor(Math.random() * stories.length);
+            storySpan.textContent = stories[randomIndex];
+        });
+    }
 
